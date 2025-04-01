@@ -1,0 +1,61 @@
+Question 1) Clicking on the button the font size, and color of the paragraph text will be changed.
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>JS DOM paragraph style</title>
+</head> 
+<body>
+<p id ='text'>JavaScript Exercises - w3resource</p> 
+<div>
+<button id="jsstyle"
+onclick="js_style()">Style</button>
+</div>
+</body>
+</html>
+
+
+Solution)  
+
+function js_style(){
+  let para = document.querySelector("#text");
+  para.style.fontSize="20px";
+  para.style.color="green";
+ para.style.backgroundColor="yellow";
+}
+
+
+
+
+
+
+Question 2 ) Write a JavaScript function to get the values of First and Last names of the following form.
+
+<!DOCTYPE html>
+<html><head>
+<meta charset=utf-8 />
+<title>Return first and last name from a form - w3resource</title>
+</head><body>
+<form id="form1" onsubmit="getFormvalue()">
+First name: <input type="text" name="fname" value="David"><br>
+Last name: <input type="text" name="lname" value="Beckham"><br>
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
+
+
+Solution )
+function getFormvalue() {
+  let nameSet = document.querySelectorAll("form"); // Select all form elements
+  nameSet.forEach((element, idx) => { // Loop through each form
+    element.querySelectorAll("input").forEach((input) => { // Loop through inputs inside the form
+      if (input.value !== 'Submit') {
+        console.log(input.value); // Log the input value
+      }
+    });
+  });
+}
